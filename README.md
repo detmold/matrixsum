@@ -13,8 +13,11 @@ od $matrix[1][1] do $matrix[$x][$y]
 
 ## Algorytm
 1. Wyznaczamy tablicę o takich samych wymiarach jak tablica wejściowa $matrix i oznczamy ją jako $satMatrix będzie to tablica zawierająca sumy elementów od $matrix[1][1] do $matrix[$x][$y]
-2. Element tablicy $satMatrix[$i][$j] wyznaczamy ze wzoru: $satMatrix[$i][$j] = $matrix[$i][$j] + $satMatrix[$i-1][$j] + $satMatrix[$i][$j-1] - $satMatrix[$i-1][$j-1] przy czym
-$satMatrix[1][1] = $matrix[1][1]; dla $i = 1 oraz $j = 1
-$satMatrix[$i][1] = $satMatrix[$i-1][1] + $matrix[$i][1]; dla $j = 1 
-$satMatrix[1][$j] = $satMatrix[1][$j-1] + $matrix[1][$j]; dla $i = 1
-$satMatrix[$i][$j] = $matrix[$i][$j] + $satMatrix[$i-1][$j] + $satMatrix[$i][$j-1] - $satMatrix[$i-1][$j-1]; dla 1 < $i <= $n oraz 1 < $j <= $m  
+2. Element tablicy $satMatrix[$i][$j] wyznaczamy ze wzoru: 
+```php
+$satMatrix[$i][$j] = $matrix[$i][$j] + $satMatrix[$i-1][$j] + $satMatrix[$i][$j-1] - $satMatrix[$i-1][$j-1]; // przy czym
+$satMatrix[1][1] = $matrix[1][1];  // dla $i = 1 oraz $j = 1
+$satMatrix[$i][1] = $satMatrix[$i-1][1] + $matrix[$i][1]; // dla $j = 1 
+$satMatrix[1][$j] = $satMatrix[1][$j-1] + $matrix[1][$j]; // dla $i = 1
+$satMatrix[$i][$j] = $matrix[$i][$j] + $satMatrix[$i-1][$j] + $satMatrix[$i][$j-1] - $satMatrix[$i-1][$j-1]; // dla 1 < $i <= $n oraz 1 < $j <= $m  
+```

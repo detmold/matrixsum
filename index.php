@@ -48,7 +48,7 @@ class MatrixSum {
             $this->queriesMatrix = explode(' ', trim(stream_get_line(STDIN, 10000000, PHP_EOL)));
             $x = $this->queriesMatrix[0];
             $y = $this->queriesMatrix[1];
-            echo 'Suma dla indeksu od [0][0] do ['. $x. '][' .$y. '] wynosi: '. $this->satMatrix[$x][$y] . PHP_EOL;
+            echo $this->satMatrix[$x][$y] . PHP_EOL;
         }
 
         
